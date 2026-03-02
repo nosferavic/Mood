@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="imagens/LOGO-ICO.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
-    <title>MOOD - LOGIN</title>
+    <title>Mood - Login</title>
 </head>
 <body>
     <div class="page-wrapper">
@@ -32,9 +32,17 @@
             </div>
                 <button class="login-btn" onclick="LoginUser(event)">Entrar</button>
             </form>
+            <div class="social-login">
+                <button type="button" class="social-btn google" onclick="loginGoogle()">
+                <img src="imagens/google.png" alt="Google">Entrar com Google
+                </button>
+                <button type="button" class="social-btn facebook" onclick="loginFacebook()">
+               <img src="imagens/face.png" alt="Facebook">Entrar com Facebook
+                </button>
+            </div>
             <a href="#" class="forgot">Esqueceu a senha?</a> <div class="divider">
         </div>
-         <div class="signup"> Não tem uma conta? <a href="#">Criar conta</a>
+         <div class="signup"> Não tem uma conta? <a href="./sign-up/signup.html">Criar conta</a>
         </div>
         </div>
 </body>

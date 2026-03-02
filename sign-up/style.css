@@ -44,8 +44,8 @@ body {
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35));
 }
 
-/* ===== CONTAINER LOGIN ===== */
-.login-container {
+/* ===== CONTAINER SIGN-UP ===== */
+.signup-container {
   margin-top: 80px;
   width: 380px;
   background: rgba(255, 255, 255, 0.92);
@@ -143,7 +143,7 @@ body {
 }
 
 /* ===== BOTÃO ===== */
-.login-btn {
+.signup-btn {
   width: 100%;
   padding: 15px;
   border-radius: 16px;
@@ -159,13 +159,13 @@ body {
   overflow: hidden;
 }
 
-.login-btn:hover {
+.signup-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
 }
 
 /* Ripple */
-.login-btn .ripple {
+.signup-btn .ripple {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -214,7 +214,7 @@ body {
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 420px) {
-  .login-container {
+  .signup-container {
     width: 90%;
     padding: 30px 20px;
   }
@@ -223,7 +223,7 @@ body {
     width: 220px;
   }
 }
-.social-login {
+.social-signup {
   margin-top: 15px;
   display: flex;
   flex-direction: column;

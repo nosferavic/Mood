@@ -76,3 +76,10 @@ function LoginUser(event) {
     // window.location.href = "home.html";
   }, 400);
 }
+function loginGoogle() {
+  alert("🔐 Login com Google (simulação)");
+}
+
+function loginFacebook() {
+  alert("📘 Login com Facebook (simulação)");
+}

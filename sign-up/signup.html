@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="LOGO-ICO.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="index.js" defer></script>
+    <title>Mood - Cadastro</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="logo-top">
+            <img src="../imagens/MOOD-LGO.png" alt="Logo Mood">
+        </div>
+
+        <div class="signup-container">
+            <div class="logo">Cadastre-se</div>
+            <div class="subtitle">Compartilhe como você está se sentindo hoje!</div>
+
+            <form>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="seu@email.com">
+                    <div class="error-message" id="emailError">Email inválido</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Nome completo</label>
+                    <input type="text" id="name" placeholder="Seu nome">
+                    <div class="error-message" id="nameError">Nome inválido</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="••••••••">
+                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirme sua senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="••••••••">
+                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
+                </div>
+
+                <button class="signup-btn" onclick="signupUser(event)">Cadastrar</button>
+            </form>
+
+            <div class="signup forgot">
+                Já tem uma conta? <a href="../index.html">Entrar com conta</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
