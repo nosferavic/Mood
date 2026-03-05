@@ -21,20 +21,32 @@
             <form>
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" id="email" placeholder="seu@email.com">
+                    <input type="email" id="email" placeholder="seu@email.com" required>
                     <div class="error-message" id="emailError">Email inválido</div>
                 </div>
 
                 <div class="input-group">
                     <label>Nome completo</label>
-                    <input type="text" id="name" placeholder="Seu nome">
+                    <input type="text" id="name" placeholder="Seu nome" required>
                     <div class="error-message" id="nameError">Nome inválido</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Usuário</label>
+                    <input type="text" id="user" placeholder="Usuário" required>
+                    <div class="error-message" id="nameError">Usuário inválido</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Data de nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" min="1900-01-01" max="2026-12-31" placeholder="01/01/2000" required>
+                    <div class="error-message" id="emailError">Email inválido</div>
                 </div>
 
                 <div class="input-group">
                     <label>Senha</label>
                     <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="••••••••">
+                        <input type="password" id="password" placeholder="••••••••" required>
                         <span class="toggle-password" onclick="togglePassword()">👁️</span>
                     </div>
                 </div>
@@ -42,7 +54,7 @@
                 <div class="input-group">
                     <label>Confirme sua senha</label>
                     <div class="password-wrapper">
-                        <input type="password" id="confirmPassword" placeholder="••••••••">
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
                         <span class="toggle-password" onclick="togglePassword()">👁️</span>
                     </div>
                 </div>

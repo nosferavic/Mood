@@ -3,79 +3,98 @@
 // =============================
 function togglePassword() {
   const passwordInput = document.getElementById("password");
+  const toggleIcon = document.querySelector(".toggle-password");
 
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
+    toggleIcon.textContent = "🙈";
   } else {
     passwordInput.type = "password";
+    toggleIcon.textContent = "👁️";
   }
 }
 
 // =============================
-// LOGIN + VALIDAÇÃO DE USUÁRIO
+// FUNÇÃO PARA ATIVAR ERRO VISUAL
+// =============================
+function setError(input) {
+  const group = input.closest(".input-group");
+  group.classList.add("error");
+
+  setTimeout(() => {
+    group.classList.remove("error");
+  }, 400);
+}
+
+// =============================
+// LOGIN + VALIDAÇÃO
 // =============================
 function LoginUser(event) {
-  event.preventDefault(); // impede reload do form
+  event.preventDefault();
 
   const emailInput = document.getElementById("email");
-  const emailError = document.getElementById("emailError");
-  const email = emailInput.value.trim();
-  const password = document.getElementById("password").value.trim();
+  const passwordInput = document.getElementById("password");
+  const loginButton = document.querySelector(".login-btn");
 
-  // ===== Validação de email =====
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
   const validEmail = /\S+@\S+\.\S+/.test(email);
 
+  // =============================
+  // VALIDAÇÃO EMAIL
+  // =============================
   if (!validEmail) {
-    emailError.style.display = "block";
-    emailInput.classList.add("input-error");
-
-    setTimeout(() => {
-      emailInput.classList.remove("input-error");
-    }, 400);
-
+    setError(emailInput);
     return;
-  } else {
-    emailError.style.display = "none";
   }
 
   // =============================
-  // USUÁRIO CADASTRADO (SIMULAÇÃO)
+  // VALIDAÇÃO SENHA VAZIA
+  // =============================
+  if (password.length < 4) {
+    setError(passwordInput);
+    return;
+  }
+
+  // =============================
+  // USUÁRIO SIMULADO
   // =============================
   const usuarioCadastrado = {
     email: "usuario@mood.com",
     senha: "123456"
   };
 
-  // ===== Verifica se usuário existe =====
   if (email !== usuarioCadastrado.email) {
-    alert("❌ Usuário não cadastrado!");
+    setError(emailInput);
     return;
   }
 
-  // ===== Verifica senha =====
   if (password !== usuarioCadastrado.senha) {
-    alert("⚠️ Senha incorreta!");
+    setError(passwordInput);
     return;
   }
 
-  // ===== Ripple effect =====
-  const button = event.currentTarget;
-  const circle = document.createElement("span");
-  circle.classList.add("ripple");
+  // =============================
+  // ESTADO LOADING NO BOTÃO
+  // =============================
+  loginButton.disabled = true;
+  loginButton.textContent = "Entrando...";
 
-  const rect = button.getBoundingClientRect();
-  circle.style.left = `${event.clientX - rect.left}px`;
-  circle.style.top = `${event.clientY - rect.top}px`;
-
-  button.appendChild(circle);
-  setTimeout(() => circle.remove(), 600);
-
-  // ===== Login sucesso =====
+  // =============================
+  // LOGIN SUCESSO
+  // =============================
   setTimeout(() => {
     alert("✅ Login realizado com sucesso!");
+    loginButton.disabled = false;
+    loginButton.textContent = "Entrar";
     // window.location.href = "home.html";
-  }, 400);
+  }, 800);
 }
+
+// =============================
+// LOGIN SOCIAL (SIMULAÇÃO)
+// =============================
 function loginGoogle() {
   alert("🔐 Login com Google (simulação)");
 }
